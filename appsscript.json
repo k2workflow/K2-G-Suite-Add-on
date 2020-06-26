@@ -1,0 +1,73 @@
+{
+  "timeZone": "America/Denver",
+  "dependencies": {
+    "enabledAdvancedServices": [{
+      "userSymbol": "Drive",
+      "serviceId": "drive",
+      "version": "v2"
+    }],
+    "libraries": [{
+      "userSymbol": "OAuth2",
+      "libraryId": "1B7FSrk5Zi6L1rSxxTDgDEUsPzlukDsi4KGuTMorsTQHhGBzBkMun4iDF",
+      "version": "33"
+    }]
+  },
+  "exceptionLogging": "STACKDRIVER",
+  "oauthScopes": [
+    "https://www.googleapis.com/auth/script.external_request", 
+    "https://www.googleapis.com/auth/drive",
+    "https://www.googleapis.com/auth/drive.metadata.readonly", 
+    "https://www.googleapis.com/auth/drive.addons.metadata.readonly", 
+    "https://www.googleapis.com/auth/gmail.addons.execute",
+    "https://www.googleapis.com/auth/gmail.readonly",
+    "https://www.googleapis.com/auth/gmail.addons.current.message.readonly",
+    "https://www.googleapis.com/auth/userinfo.email"
+    ],
+  "urlFetchWhitelist": [
+    "https://*.onK2qa.com/Api/",
+    "https://login.microsoftonline.com/"
+  ],
+  "addOns": {
+    "common": {
+      "name": "K2",
+      "logoUrl": "http://contentus.blob.core.windows.net/images/k2_logo_sidebar.png",
+      "layoutProperties": {
+        "primaryColor": "#81AE40",
+        "secondaryColor": "#d68617"
+      },
+      "homepageTrigger": {
+        "runFunction": "onHomepage"
+      },
+      "universalActions": [
+        {
+          "label": "Home",
+          "runFunction": "onHomepage"
+        },
+        {
+          "label": "Debug",
+          "runFunction": "onDebug"
+        },
+        {
+          "label": "Settings",
+          "runFunction": "onSettings"
+        },
+        {
+          "label": "Help",
+          "openLink": "https://help.k2.com"
+        }
+      ]
+    },
+    "gmail": {
+      "contextualTriggers": [{
+        "unconditional": {
+        },
+        "onTriggerFunction": "onGmailMessageSelected"
+      }]
+    },
+    "drive": {
+      "onItemsSelectedTrigger": {
+        "runFunction": "onDriveItemSelected"
+      }
+    }
+  }
+}
