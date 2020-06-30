@@ -29,11 +29,3 @@ var cardSettingsSubTitle = 'Configure K2 Cloud.';
 var propertyK2Server = 'k2server';
 var propertyAADTenant = 'aadTenant';
 var propertyK2ServerURL = 'k2ServerUrl';
-
-//Authentication
-var oAuthClientID = 'b5687ae0-3597-45af-80d3-e1a21b68e606';
-var oAuthClientSecret = '/bhE[eHyI53.tr68gGGF-y@7-:41=WR.';
-
-
-
-
