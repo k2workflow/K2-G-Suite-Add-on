@@ -12,7 +12,7 @@
       "version": "33"
     }]
   },
-  "exceptionLogging": "STACKDRIVER",
+  "exceptionLogging": "STACKDRIVER", 
   "oauthScopes": [
     "https://www.googleapis.com/auth/script.external_request", 
     "https://www.googleapis.com/auth/drive",
@@ -24,8 +24,9 @@
     "https://www.googleapis.com/auth/userinfo.email"
     ],
   "urlFetchWhitelist": [
-    "https://*.onK2qa.com/Api/",
-    "https://login.microsoftonline.com/"
+    "https://*.onK2qa.com/",
+    "https://login.microsoftonline.com/",
+    "https://*.onk2.com/"
   ],
   "addOns": {
     "common": {
