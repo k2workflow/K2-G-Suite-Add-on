@@ -24,9 +24,10 @@
     "https://www.googleapis.com/auth/userinfo.email"
     ],
   "urlFetchWhitelist": [
-    "https://*.onK2qa.com/",
-    "https://login.microsoftonline.com/",
-    "https://*.onk2.com/"
+    "https://*.onk2.com/",
+    "https://*.onk2qa.com/",
+    "https://*.onk2stable.com",
+    "https://login.microsoftonline.com/"
   ],
   "addOns": {
     "common": {
