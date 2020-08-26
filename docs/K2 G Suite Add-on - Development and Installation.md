@@ -196,61 +196,38 @@ Manage G Suite Marketplace SDK
 
 ### Configuration
 
--   Select Configuration
+- Select Configuration
+- Application info
+  - Application name: K2 G Suite Add-on
+  - Application description: K2 G Suite Add-on for K2 workflow APIs
+  - Enable individual install: checked
+- Application icons
+  - Select the associated sized logos
+- OAuth 2.0 Scopes
 
--   Application info
-
-    -   Application name: K2 G Suite Add-on
-
-    -   Application description: K2 G Suite Add-on for K2 workflow APIs
-
-    -   Enable individual install: checked
-
--   Application icons
-
-    -   Select the associated sized logos
-
--   OAuth 2.0 Scopes
-
-
+| Scope URLs |
 |-----------------------------------------------------------------------|
-| URLs                                                                  |
-+-----------------------------------------------------------------------+
 | https://www.googleapis.com/auth/userinfo.email                        |
-|                                                                       |
 | https://www.googleapis.com/auth/userinfo.profile                      |
-|                                                                       |
 | https://www.googleapis.com/auth/script.external_request               |
-|                                                                       |
 | https://www.googleapis.com/auth/drive                                 |
-|                                                                       |
 | https://www.googleapis.com/auth/drive.metadata.readonly               |
-|                                                                       |
 | https://www.googleapis.com/auth/drive.addons.metadata.readonly        |
-|                                                                       |
 | https://www.googleapis.com/auth/gmail.readonly                        |
-|                                                                       |
 | https://www.googleapis.com/auth/gmail.addons.execute                  |
-|                                                                       |
 | https://www.googleapis.com/auth/gmail.addons.current.message.readonly |
-+-----------------------------------------------------------------------+
+
 
 -   Support URLs
-
     -   Terms of service URL:
         <https://github.com/k2workflow/K2-G-Suite-Add-on>
 
 -   Extensions
-
-    -   G Suite Add-ons Extensio
-
-    -   Paste Apps Script project **Deployment ID**
-
-    -   NOTE: Gmail Add-ons Extension and Drive Add-ons extensions
-        should be auto selected
+  -   G Suite Add-ons Extensio
+  -   Paste Apps Script project **Deployment ID**
+  -   NOTE: Gmail Add-ons Extension and Drive Add-ons extensions should be auto selected
 
 -   Visibility
-
     -   Select My Domain (Only available to users at *{your domain}*)
 
 ### Publish
