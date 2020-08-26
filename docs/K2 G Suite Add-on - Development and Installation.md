@@ -68,12 +68,12 @@ also needs some details of the actual Google Project.
 7. Click Register
 8. Once the app is registered, go to the API Permissions.
 9. Add permissions for the K2 API
-  a. Click add permissions
-  b. Search K2 under "APIs my organization uses"
-  c. select K2 API.
-  d. Select Delegate permissions
-  e. Select User_impersonation
-  f. Click Add permissions
+  1. Click add permissions
+  2. Search K2 under "APIs my organization uses"
+  3. select K2 API.
+  4. Select Delegate permissions
+  5. Select User_impersonation
+  6. Click Add permissions
 11. Leave the Microsoft Graph User.Read permissions in place.
 12. Go to Certificates & Secrets
 13. Click New Client Secret
