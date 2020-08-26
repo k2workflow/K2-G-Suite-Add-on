@@ -1,4 +1,4 @@
-// Create card for setting Serial Number in Drive
+// Create card for debugging setting/getting Serial Number property on files in Drive
 function createCardDebug(fileId, serialNumber){
   console.log("createCardDebug");
   

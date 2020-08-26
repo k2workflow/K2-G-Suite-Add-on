@@ -26,7 +26,7 @@
   "urlFetchWhitelist": [
     "https://*.onk2.com/",
     "https://*.onk2qa.com/",
-    "https://*.onk2stable.com",
+    "https://*.onk2stable2.com/",
     "https://login.microsoftonline.com/"
   ],
   "addOns": {
@@ -52,10 +52,6 @@
         {
           "label": "Settings",
           "runFunction": "onSettings"
-        },
-        {
-          "label": "Designer",
-          "openLink": "buildK2DesignerURL()"
         },
         {
           "label": "Help",

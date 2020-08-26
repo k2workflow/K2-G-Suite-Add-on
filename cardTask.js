@@ -41,10 +41,8 @@ function populateButtonTasks(serialNumber) {
   }
   catch(e)
   {
-    // usually error retrieving tasks, which is correct
-    // "Message": "Task could not be retrieved. Either access denied or not found."
-    // simply set tasks to 0 to show standard 'no tasks' screen
-    // Implement Error Card
+    // NOTE: The error usually in retrieving tasks, which is correct so simply set tasks to 0 to show the standard 'no tasks' card
+    //  "Message": "Task could not be retrieved. Either access denied or not found."
     actionCount = 0;
     console.log(e);
   }

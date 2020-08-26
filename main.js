@@ -1,11 +1,6 @@
-// TODO: need to manage moving to Task card as well
-// TODO: need to manage getting Authorization on different cards if we don't have it
-// TODO: need to implement global menus for Authorize / Logout
-
 //Global Settings
 var AddOnSettings = getSettings();
 AddOnSettings.oAuthService = getOAuthService();
-
 
 /**
  * Callbacks for rendering the homepage and trigger card.
@@ -48,7 +43,7 @@ function onDebug(e) {
 function onDriveItemSelected(e) {
   // Get File.Id from the event arguments
   var fileId = e.drive.activeCursorItem.id;
-  // TODO: try/catch/if/else can be more elegant/efficient
+  // TODO: #8 implement more elegant solution for try/catch/if/else
   // Permission Required: https://www.googleapis.com/auth/drive.metadata.readonly
   try {
     var serialNumber = Drive.Properties.get(fileId,'SN',{'visibility':'PUBLIC'}).value; 
@@ -95,7 +90,7 @@ function onGmailMessageSelected(e) {
     return createCardTask(serialNumber);
   }
   else {
-    // TODO: need to create more dynamic createCardWorkflow to handle messageId (gmail) and fileId (drive)
+    // TODO: #7 create a more dynamic createCardWorkflow to handle messageId (gmail) and fileId (drive)
     console.log("No Serial Number found. Show Workflow Card.");
     return createCardWorkflow();
   }

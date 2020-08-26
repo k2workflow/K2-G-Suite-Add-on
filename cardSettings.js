@@ -1,15 +1,4 @@
-// TODO (Remy): can you wire up more than one suggestions cache for different text boxes?
-// TODO (Remy): Should I use getActiveUser or getEffectiveUser for login hint?
-
-// TODO (petro): Add logic to know if we are authorized or not and enable/disable links accodingly
-// TODO (petro): need to validate  K2 Server and Domain values are solid
-// TODO (petro): build logic to reset/check global variables and sign in tokens
-
-// TODO (GA): Create production AAD app and move from QA to Production via Cloud Ops
-
-  // var maybeAuthorized = oAuthService.hasAccess();
-  // console.log(maybeAuthorized);
-  // if (maybeAuthorized) {}
+// TODO #6 (Google): enhance text boxes with suggestions cache, need to first get examples from Google for wiring up more than one text box
 
 // Create Settings Card
 function createCardSettings() {

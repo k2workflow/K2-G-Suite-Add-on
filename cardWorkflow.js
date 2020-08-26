@@ -1,4 +1,4 @@
-// TODO (Remy): how do I select a dropdown value?
+// TODO #3 (Google): get examples from Google for selecting an item in a dropdown
 
 // Create Workflow Card
 function createCardWorkflow(addViewFlow, procInstId) {
@@ -52,6 +52,7 @@ function createCardWorkflow(addViewFlow, procInstId) {
     return card;
 }
 
+// TODO #4 (Workflow): Look at different ways to handle the list of available workflows including, no workflows, searching, validating data fields and item references and refreshing the list.
 
 function populateDropdownWorkflows() {
   
@@ -80,20 +81,15 @@ function populateDropdownWorkflows() {
     console.log('No workflows available to start.');
     dropdownWorkflow.addItem("<No workflows found>", "0", false);
   }
-  // TODO: need to handle no workflows found better
-  // do something with the 0 value - grey out the 'start button'
-  // implement a 'get workflows' button or a 'refresh' button
-  // implement a 'search'
   return dropdownWorkflow;
 }
 
-/* 
+//TODO: #5 look at parsing and handling an async response when starting workflows
 
-TODO: this is the selected Workflow ID and NOT the Process Instance ID. We need to build the card dynamically a few different times
+/* 
+NOTE: this is the selected Workflow ID and NOT the Process Instance ID. We need to build the card dynamically a few different times
 1) get list of items. then in the 'start' workflow button, we need to read the global variable for the workflow you just selected (set that here)
 2) we then need to light up the view flow butoton with some helper text that says success/failure and link to View Flow on success.
-TODO: need to parse and handle the response should we manage the async nature? look for examples 
-
 */
 function onClickStartWorkflow(e) {
   console.log('onClickStartWorkflow');
@@ -125,9 +121,9 @@ function onClickStartWorkflow(e) {
   .build(); 
 }
 
-/**
- * A helper function for building dropdown widgets
- */
+/*
+  A helper function for building dropdown widgets
+*/
 function buildDropdownWidget(key, title, items, selected) {
 
   var widget = CardService.newSelectionInput()
@@ -142,31 +138,3 @@ function buildDropdownWidget(key, title, items, selected) {
 
   return widget
 }
-
-// function onChangeddropdownWorkflow(e) {
-//   var id = parseInt(e.formInput.dropdownWorkflows);
-//   console.log("Selected Workflow Id: " + id);
-//   var card = createCardWorkflow(true, id);
-//   // TODO: this is the selected Workflow ID and NOT the Process Instance ID. We need to build the card dynamically a few different times
-//   // 1) get list of items. then in the 'start' workflow button, we need to read the global variable for the workflow you just selected (set that here)
-//   // 2) we then need to light up the view flow butoton with some helper text that says success/failure and link to View Flow on success.
-
-//   return CardService.newActionResponseBuilder().setNavigation(CardService.newNavigation().updateCard(card)).build()
-//   // A button that opens as a link in an overlay and
-// // // requires a reload when closed.
-// // var button = CardService.newTextButton()
-// //   .setText("This button opens a link in an overlay window")
-// //   .setOpenLink(CardService.newOpenLink()
-// //   .setUrl("https://www.google.com")
-// //   .setOpenAs(CardService.OpenAs.OVERLAY)
-// //   .setOnClose(CardService.OnClose.RELOAD_ADD_ON));
-
-// // // An action response that opens a link in full screen and
-// // // requires no action when closed.
-// // var actionResponse = CardService.newActionResponseBuilder()
-// //   .setOpenLink(CardService.newOpenLink()
-// //   .setUrl("https://www.google.com")
-// //   .setOpenAs(CardService.OpenAs.FULL_SIZE)
-// //   .setOnClose(CardService.OnClose.NOTHING))
-// //   .build();
-// }

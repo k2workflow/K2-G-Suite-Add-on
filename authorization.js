@@ -1,3 +1,5 @@
+// Authorization functions were based on the guidance from the Google documentation https://developers.google.com/gsuite/add-ons/how-tos/non-google-services
+
 function getOAuthService() {
     // Create a new service with the given name. The name will be used when persisting the authorized token, 
     // so ensure it is unique within the scope of the property store.
@@ -45,8 +47,7 @@ function getOAuthService() {
       // .setParam('approval_prompt', 'force');
   }
 
-// Google OAuth flow will invoke this function which is used to store the Authorization in the current user session
-// TODO: Get link to Google auth flow documentation
+// Google OAuth flow will invoke this function which is used to store the Authorization in the current user session 
 function authCallback(callbackRequest) {
     console.info('authCallback');
     var isAuthorized = AddOnSettings.oAuthService.handleCallback(callbackRequest);

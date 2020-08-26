@@ -1,5 +1,3 @@
-// TODO (design): update the welcome page with nicer text/
-
 // Create Homepage card
 function createCardHomepage(service) {  
     console.log("createCardHomepage");
@@ -20,7 +18,6 @@ function createCardHomepage(service) {
 
   var textParagraphWelcome = CardService.newTextParagraph()
     .setText('<b>' + textHomeWelcome + '</b><br><br>');
-    //.setImageUrl(urlHeaderPerson);
   var textParagraphAction = CardService.newTextParagraph()
     .setText(actionText);
 

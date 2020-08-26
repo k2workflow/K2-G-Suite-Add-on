@@ -2,11 +2,6 @@
 //Use of 'const' avoided due to concerns about Google ECMAScript 6 support which introduced const.
 
 //Image Urls for Icons
-// var urlK2LogoSettings = 'http://contentus.blob.core.windows.net/images/k2_logo_settings.png';
-// var urlK2LogoSidebar = 'http://contentus.blob.core.windows.net/images/k2_logo_sidebar.png';
-// var urlHeaderTask = 'http://contentus.blob.core.windows.net/images/header_task.png';
-// var urlHeaderPerson = 'http://contentus.blob.core.windows.net/images/header_person.png';
-// var urlworkflowAssignment = 'http://contentus.blob.core.windows.net/images/outline_assignment_black_48dp.png';
 var urlK2LogoSettings = 'https://github.com/k2workflow/K2-G-Suite-Add-on/raw/master/images/k2_logo_settings.png';
 var urlK2LogoSidebar = 'https://github.com/k2workflow/K2-G-Suite-Add-on/raw/master/images/k2_logo_sidebar.png';
 var urlHeaderTask = 'https://github.com/k2workflow/K2-G-Suite-Add-on/raw/master/images/header_task.png';
@@ -24,7 +19,7 @@ var titleStartWorkflow = 'Start Workflow';
 var actionTextGmail = 'Select or Open a K2 task notification email to begin.';
 var actionTextDrive = 'Open a file to perform K2 actions or start a workflow for the selected item.';
 var actionTextDefault = 'Open an email or file to perform K2 actions or start a workflow for the selected item.';
-var textHomeWelcome = 'Welcome to K2 for G Suite.';
+var textHomeWelcome = 'Welcome to the K2 G Suite Add-on';
 
 //Settings Card
 var cardSettingsTitle = 'Settings';
@@ -39,8 +34,8 @@ var propertyClientSecret = 'clientSecret';
 
 //Authentication
 // TODO: Add your client id and client secret here
-var oAuthClientID = '';
-var oAuthClientSecret = '';
+var oAuthClientID = 'cb563263-ca5c-4a1c-96ea-8650ea7939a4';
+var oAuthClientSecret = '72o.kX_5Q13so3M4N~TitlmwWiZ8w-WC3d';
 
 //Fetch Settings
 var httpScheme = 'https://';
