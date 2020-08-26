@@ -6,7 +6,7 @@ var urlK2LogoSettings = 'https://github.com/k2workflow/K2-G-Suite-Add-on/raw/mas
 var urlK2LogoSidebar = 'https://github.com/k2workflow/K2-G-Suite-Add-on/raw/master/images/k2_logo_sidebar.png';
 var urlHeaderTask = 'https://github.com/k2workflow/K2-G-Suite-Add-on/raw/master/images/header_task.png';
 var urlHeaderPerson = 'https://github.com/k2workflow/K2-G-Suite-Add-on/raw/master/images/header_person.png';
-var urlworkflowAssignment = 'https://github.com/k2workflow/K2-G-Suite-Add-on/raw/master/images/outline_assignment_black_48dp.png';
+var urlworkflowAssignment = 'https://github.com/k2workflow/K2-G-Suite-Add-on/raw/master/images/workflow_assignment.png';
 
 //UI Style Values
 var backgroundColor = '#1FA9F2';
