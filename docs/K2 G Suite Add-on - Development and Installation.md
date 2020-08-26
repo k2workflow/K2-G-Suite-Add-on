@@ -139,31 +139,21 @@ also needs some details of the actual Google Project.
     globalVariables.js file. The ClientID can be seen in the Overview of
     the app.
 
-Push the app to Google
-----------------------
+#### Push the app to Google
 
 Go back to VS Code and use the command "clasp push" to upload the code
 to google.
 
-Test the Add-on
----------------
+#### Test the Add-on
 
--   Navigate to Apps Scripts project <https://script.google.com/home/my>
+- Navigate to Apps Scripts project <https://script.google.com/home/my>
+- Publish \> Deploy from manifest...
+- Click Install add-on - You can also perform the above step with the "clasp publish" command.
+- Open Google Drive or Gmail and click on the K2 icon in the Add-on bar
+- Authorize Access
 
--   Publish \> Deploy from manifest...
-
--   Click Install add-on
-
-You can also perform the above step with the "clasp publish" command.
-
--   Open Google Drive or Gmail and click on the K2 icon in the Add-on
-    bar
-
--   Authorize Access
-
-![](media/image1.png){width="1.4409722222222223in"
-height="1.7291666666666667in"}![](media/image2.png){width="1.544456474190726in"
-height="3.3736986001749782in"}
+![](media/image1.png)
+![](media/image2.png)
 
 The K2 G Suite Add-on has now been installed and can be tested. Changes
 to code can now be made in either Apps Script or VS Code and synced
@@ -182,21 +172,14 @@ describe the process for publishing for domain access.
 Create Deployment
 -----------------
 
--   Navigate to Apps Scripts project <https://script.google.com/home/my>
-
--   Publish \> Deploy from manifest...
-
--   Deployments: Create
-
--   Deployment name: Initial Deployment 2020-06-25
-
--   Manifest: appscript
-
--   Version: New, Initial Release 0.1
-
--   Manifest entrypoints: gmail add-on
-
--   Click Save and then click Get Id and copy the **Deployment ID**
+- Navigate to Apps Scripts project <https://script.google.com/home/my>
+- Publish \> Deploy from manifest...
+- Deployments: Create
+- Deployment name: Initial Deployment 2020-06-25
+- Manifest: appscript
+- Version: New, Initial Release 0.1
+- Manifest entrypoints: gmail add-on
+- Click Save and then click Get Id and copy the **Deployment ID**
 
 Enable G Suite Marketplace SDK
 ------------------------------
@@ -229,6 +212,9 @@ Manage G Suite Marketplace SDK
 
 -   OAuth 2.0 Scopes
 
+
+|-----------------------------------------------------------------------|
+| URLs                                                                  |
 +-----------------------------------------------------------------------+
 | https://www.googleapis.com/auth/userinfo.email                        |
 |                                                                       |
@@ -288,27 +274,20 @@ Manage G Suite Marketplace SDK
 
 -   Success toast will show App URL very quickly and is not clickable.
 
-![](media/image3.png){width="3.8358213035870516in"
-height="0.7118022747156605in"}
+![](media/image3.png)
 
 -   Don't worry, you can now see the App URL at the top of the Publish
     page.
 
-![](media/image4.png){width="4.291044400699913in"
-height="1.5564206036745407in"}
+![](media/image4.png)
 
 -   Select to Domain or Individual Install and consent to the app
 
-![](media/image5.png){width="4.074627077865267in"
-height="1.9872517497812774in"}
-
+![](media/image5.png)
 -   Consent to the App and you will see a success confirmation
 
-![](media/image6.png){width="2.9352865266841643in"
-height="3.3805971128608925in"}
-
+![](media/image6.png)
 -   Navigate to Drive or Gmail and the App will now be available via the
     Add-on bar
 
-![](media/image7.png){width="3.2238801399825023in"
-height="1.3013057742782153in"}
+![](media/image7.png)
