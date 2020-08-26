@@ -8,7 +8,7 @@ K2 G Suite add-on for K2 workflow APIs.
 
 # Development and Installation
 
-Review the word doc "K2 G Suite Add-on - Development and Installation.docx"
+See [K2 G-Suite Add-On - Development and installation](./docs/K2 G Suite Add-on - Development and Installation.md).
 
 ### License
 
