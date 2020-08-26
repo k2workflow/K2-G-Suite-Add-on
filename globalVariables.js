@@ -32,10 +32,6 @@ var propertyRefreshInterval = 'refreshInterval';
 var propertyClientID = 'clientID';
 var propertyClientSecret = 'clientSecret';
 
-//Authentication
-var oAuthClientID = '';
-var oAuthClientSecret = '';
-
 //Fetch Settings
 var httpScheme = 'https://';
 var httpMethods = {
