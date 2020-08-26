@@ -38,12 +38,10 @@ function onDebug(e) {
    return createCardDebug(fileId, serialNumber);
   }
 
-// TODO (SCOTT): we need to get the 'selected item' to the workflow card, but don't want to mess up the logic for reloading
-
 function onDriveItemSelected(e) {
   // Get File.Id from the event arguments
   var fileId = e.drive.activeCursorItem.id;
-  // TODO: #8 implement more elegant solution for try/catch/if/else
+  // TODO #8: implement more elegant solution for try/catch/if/else
   // Permission Required: https://www.googleapis.com/auth/drive.metadata.readonly
   try {
     var serialNumber = Drive.Properties.get(fileId,'SN',{'visibility':'PUBLIC'}).value; 
@@ -90,7 +88,7 @@ function onGmailMessageSelected(e) {
     return createCardTask(serialNumber);
   }
   else {
-    // TODO: #7 create a more dynamic createCardWorkflow to handle messageId (gmail) and fileId (drive)
+    // TODO #7: create a more dynamic createCardWorkflow to handle messageId (gmail) and fileId (drive)
     console.log("No Serial Number found. Show Workflow Card.");
     return createCardWorkflow();
   }

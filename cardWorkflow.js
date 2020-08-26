@@ -52,7 +52,7 @@ function createCardWorkflow(addViewFlow, procInstId) {
     return card;
 }
 
-// TODO #4 (Workflow): Look at different ways to handle the list of available workflows including, no workflows, searching, validating data fields and item references and refreshing the list.
+// TODO #4: look at different ways to handle the list of available workflows including, no workflows, searching, validating data fields and item references and refreshing the list.
 
 function populateDropdownWorkflows() {
   
@@ -69,7 +69,7 @@ function populateDropdownWorkflows() {
     .setType(CardService.SelectionInputType.DROPDOWN)
     .setTitle(titleWorkflow);
     // .setOnChangeAction(CardService.newAction()
-    //   .setFunctionName("onChangedDropdownWorkflow"));
+    // .setFunctionName("onChangedDropdownWorkflow"));
 
   if (itemCount && itemCount > 0) {
     console.log('Workflows:');
@@ -84,7 +84,7 @@ function populateDropdownWorkflows() {
   return dropdownWorkflow;
 }
 
-//TODO: #5 look at parsing and handling an async response when starting workflows
+//TODO #5: look at parsing and handling an async response when starting workflows
 
 /* 
 NOTE: this is the selected Workflow ID and NOT the Process Instance ID. We need to build the card dynamically a few different times
