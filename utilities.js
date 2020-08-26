@@ -69,5 +69,6 @@ function buildK2FormUrl(serialNumber){
     return httpScheme + AddOnSettings.K2Server + '/Runtime/Runtime/Form/com.K2.System.Workflow.Form.BasicTask/?SN=' + serialNumber + '&_title=&_url=&_embed=';
 }
 
-
-
+function buildK2DesignerURL(){
+    return httpScheme + AddOnSettings.K2Server + '/Designer';
+}

@@ -54,6 +54,10 @@
           "runFunction": "onSettings"
         },
         {
+          "label": "Designer",
+          "openLink": "buildK2DesignerURL()"
+        },
+        {
           "label": "Help",
           "openLink": "https://help.k2.com"
         }
