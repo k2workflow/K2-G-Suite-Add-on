@@ -4,10 +4,8 @@ The K2 G Suite Add-on uses K2 workflow APIs to add workflow capabilities to Goog
 
 A user can do the following without ever having to leave the G Suite experience.
  
-- Access the K2 Designer to build new workflows for a Google Drive drive
 - Initiate a workflow on an item in Google Drive or Gmail for simple or complex routing scenarios while integrating with other line-of-business systems across the organization
 - Be assigned a task related to a piece of content in Google Drive or Gmail and action that task – along with seeing any relevant details/context surrounding that task
-
 
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
