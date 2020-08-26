@@ -1,16 +1,24 @@
-## K2 G Stuite Add-on
+# K2 G Stuite Add-on
 
-K2 G Suite add-on for K2 workflow APIs.
+The K2 G Suite Add-on uses K2 workflow APIs to add workflow capabilities to Google Drive and Gmail. 
+
+A user can do the following without ever having to leave the G Suite experience.
+ 
+- Access the K2 Designer to build new workflows for a Google Drive drive
+- Initiate a workflow on an item in Google Drive or Gmail for simple or complex routing scenarios while integrating with other line-of-business systems across the organization
+- Be assigned a task related to a piece of content in Google Drive or Gmail and action that task – along with seeing any relevant details/context surrounding that task
+
+
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 [![clasp](https://img.shields.io/badge/built%20with-clasp-4285f4.svg)](https://github.com/google/clasp)
 
-# Development and Installation
+## Development and Installation
 
-See [here](docs/K2%20G%20Suite%20Add-on%20-%20Development%20and%20Installation.md).
+See [here](docs/Development%20and%20Installation.md).
 
-### License
+## License
 
 MIT, found in the [LICENSE](./LICENSE) file.
 
