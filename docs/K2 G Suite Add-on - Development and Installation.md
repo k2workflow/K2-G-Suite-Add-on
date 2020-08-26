@@ -64,7 +64,7 @@ also needs some details of the actual Google Project.
 4. Click New Registration
 5. Type the name of the app, select "Accounts in any organizational directory (Any Azure AD directory - Multitenant) and personal Microsoft accounts (e.g. Skype, Xbox)"
 6. Under Redirect URI, select "web" and enter the following URL, replacing the SCRIPTID: "https://script.google.com/macros/d/{SCRIPT
-    ID}/usercallback" with the value entered in the .clasp.json file.
+    ID}/usercallback" with the value entered in the `.clasp.json` file.
 7. Click Register
 8. Once the app is registered, go to the API Permissions.
 9. Add permissions for the K2 API
@@ -78,8 +78,8 @@ also needs some details of the actual Google Project.
 12. Go to Certificates & Secrets
 13. Click New Client Secret
     a.  Enter a name, select the Expiration (for dev purposes, select Never)
-    b.  COPY THE VALUE (you can only do this once!) -- this is the ClientSecret.
-13. In the code, update the ClientID and ClientSecret in the globalVariables.js file. The ClientID can be seen in the Overview of
+    b.  COPY THE VALUE (you can only do this once!) -- this is the `ClientSecret`.
+13. In the code, update the `ClientID` and `ClientSecret` in the `globalVariables.js` file. The `ClientID` can be seen in the Overview of
     the app.
 
 #### Push the app to Google
