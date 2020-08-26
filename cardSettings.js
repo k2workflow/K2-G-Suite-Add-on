@@ -19,6 +19,7 @@ function createCardSettings() {
     .setTitle('Refresh Interval')
     .setValue(AddOnSettings.RefreshInterval)
   
+
   var authButton = CardService.newTextButton();
   var authSection = CardService.newCardSection().setHeader("Authorization");    
 
@@ -53,15 +54,6 @@ function createCardSettings() {
     .setHeader('K2 Cloud')
     .addWidget(textK2Server)
     .addWidget(textRefreshInterval);
-
-    var openLink = CardService.newOpenLink()
-    .setUrl(buildK2ViewflowURL(procInstId))
-    .setOpenAs(CardService.OpenAs.OVERLAY);
-
-    fixedFooter.setPrimaryButton(CardService.newTextButton()
-    .setText("View Flow")
-    .setOpenLink(openLink)   
-
 
   var fixedFooter = CardService.newFixedFooter()
   .setPrimaryButton(CardService.newTextButton()
