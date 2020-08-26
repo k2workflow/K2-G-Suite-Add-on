@@ -33,9 +33,8 @@ var propertyClientID = 'clientID';
 var propertyClientSecret = 'clientSecret';
 
 //Authentication
-// TODO: Add your client id and client secret here
-var oAuthClientID = 'cb563263-ca5c-4a1c-96ea-8650ea7939a4';
-var oAuthClientSecret = '72o.kX_5Q13so3M4N~TitlmwWiZ8w-WC3d';
+var oAuthClientID = '';
+var oAuthClientSecret = '';
 
 //Fetch Settings
 var httpScheme = 'https://';
