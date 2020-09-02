@@ -1,4 +1,4 @@
-# K2 G Stuite Add-on
+# K2 G Suite Add-on
 
 The K2 G Suite Add-on uses K2 workflow APIs to add workflow capabilities to Google Drive and Gmail. 
 
