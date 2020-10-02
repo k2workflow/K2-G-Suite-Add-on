@@ -12,23 +12,10 @@
       "version": "33"
     }]
   },
-  "exceptionLogging": "STACKDRIVER", 
-  "oauthScopes": [
-    "https://www.googleapis.com/auth/script.external_request", 
-    "https://www.googleapis.com/auth/drive",
-    "https://www.googleapis.com/auth/drive.metadata.readonly", 
-    "https://www.googleapis.com/auth/drive.addons.metadata.readonly", 
-    "https://www.googleapis.com/auth/gmail.addons.execute",
-    "https://www.googleapis.com/auth/gmail.readonly",
-    "https://www.googleapis.com/auth/gmail.addons.current.message.readonly",
-    "https://www.googleapis.com/auth/userinfo.email"
-    ],
-  "urlFetchWhitelist": [
-    "https://*.onk2.com/",
-    "https://*.onk2qa.com/",
-    "https://*.onk2stable.com/",
-    "https://login.microsoftonline.com/"
-  ],
+  "exceptionLogging": "STACKDRIVER",
+  "oauthScopes": ["https://www.googleapis.com/auth/script.external_request", "https://www.googleapis.com/auth/drive", "https://www.googleapis.com/auth/drive.metadata.readonly", "https://www.googleapis.com/auth/drive.addons.metadata.readonly", "https://www.googleapis.com/auth/gmail.addons.execute", "https://www.googleapis.com/auth/gmail.readonly", "https://www.googleapis.com/auth/gmail.addons.current.message.readonly", "https://www.googleapis.com/auth/userinfo.email"],
+  "urlFetchWhitelist": ["https://*.onk2.com/", "https://*.onk2qa.com/", "https://*.onk2stable.com/", "https://login.microsoftonline.com/"],
+  "runtimeVersion": "V8",
   "addOns": {
     "common": {
       "name": "K2",
@@ -40,24 +27,19 @@
       "homepageTrigger": {
         "runFunction": "onHomepage"
       },
-      "universalActions": [
-        {
-          "label": "Home",
-          "runFunction": "onHomepage"
-        },
-        {
-          "label": "Debug",
-          "runFunction": "onDebug"
-        },
-        {
-          "label": "Settings",
-          "runFunction": "onSettings"
-        },
-        {
-          "label": "Help",
-          "openLink": "https://help.k2.com"
-        }
-      ]
+      "universalActions": [{
+        "label": "Home",
+        "runFunction": "onHomepage"
+      }, {
+        "label": "Debug",
+        "runFunction": "onDebug"
+      }, {
+        "label": "Settings",
+        "runFunction": "onSettings"
+      }, {
+        "label": "Help",
+        "openLink": "https://github.com/k2workflow/K2-G-Suite-Add-on"
+      }]
     },
     "gmail": {
       "contextualTriggers": [{

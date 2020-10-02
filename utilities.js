@@ -1,3 +1,4 @@
+// Utility functions
 function isNullorEmpty(value)
 {
     console.log("Is Null or Empty");
@@ -27,7 +28,7 @@ function HttpClientGet(url, enableExceptions){
     return UrlFetchApp.fetch(url, {
         method: 'get',
         headers: {
-            Authorization: 'Bearer ' + AddOnSettings.oAuthService.getAccessToken()
+            Authorization: 'Bearer ' + AddOnCache.oAuthService.getAccessToken()
         },
         muteHttpExceptions: enableExceptions
     });
@@ -39,36 +40,38 @@ function HttpClientPost(url,payload,enableExceptions){
         contentType: 'application/json',
         payload: JSON.stringify(payload),
         headers: {
-            Authorization: 'Bearer ' + AddOnSettings.oAuthService.getAccessToken()
+            Authorization: 'Bearer ' + AddOnCache.oAuthService.getAccessToken()
         },
         muteHttpExceptions: enableExceptions
     });
 }
 
+var httpScheme = 'https://';
+
 function buildK2TaskActionURL(serialNumber, customAction){
-    return httpScheme + AddOnSettings.K2Server + '/Api/Workflow/V1/tasks/' + serialNumber + '/actions/' + customAction;
+    return httpScheme + AddOnCache.K2Server + '/Api/Workflow/V1/tasks/' + serialNumber + '/actions/' + customAction;
 }
 
 function buildK2TaskActionsURL(serialNumber){
-    return httpScheme + AddOnSettings.K2Server + '/Api/Workflow/V1/tasks/' + serialNumber + '/actions';
+    return httpScheme + AddOnCache.K2Server + '/Api/Workflow/V1/tasks/' + serialNumber + '/actions';
 }
 
 function buildK2WorkflowsURL(){
-    return httpScheme + AddOnSettings.K2Server + '/Api/Workflow/V1/workflows?type=startable';
+    return httpScheme + AddOnCache.K2Server + '/Api/Workflow/V1/workflows?type=startable';
 }
 
 function buildK2StartWorkflowURL(procId){
-    return httpScheme + AddOnSettings.K2Server + '/Api/Workflow/V1/workflows/' + procId;
+    return httpScheme + AddOnCache.K2Server + '/Api/Workflow/V1/workflows/' + procId;
 }
 
 function buildK2ViewflowURL(procInstId){
-    return httpScheme + AddOnSettings.K2Server + '/Designer/K2Workflow/Viewflow.aspx?procInstId=' + procInstId;
+    return httpScheme + AddOnCache.K2Server + '/Designer/K2Workflow/Viewflow.aspx?procInstId=' + procInstId;
 }
 
 function buildK2FormUrl(serialNumber){
-    return httpScheme + AddOnSettings.K2Server + '/Runtime/Runtime/Form/com.K2.System.Workflow.Form.BasicTask/?SN=' + serialNumber + '&_title=&_url=&_embed=';
+    return httpScheme + AddOnCache.K2Server + '/Runtime/Runtime/Form/com.K2.System.Workflow.Form.BasicTask/?SN=' + serialNumber + '&_title=&_url=&_embed=';
 }
 
 function buildK2DesignerURL(){
-    return httpScheme + AddOnSettings.K2Server + '/Designer';
+    return httpScheme + AddOnCache.K2Server + '/Designer';
 }

@@ -1,16 +1,22 @@
 // TODO #3 (Google): get examples from Google for selecting an item in a dropdown
 
+// Card Literals
+var titleWorkflow = 'Workflow';
+var titleStartWorkflow = 'Start Workflow';
+var urlWorkflowAssignment = 'http://contentus.blob.core.windows.net/images/outline_assignment_black_48dp.png';
+
 // Create Workflow Card
 function createCardWorkflow(addViewFlow, procInstId) {
   
-  console.log('K2 Server:' + AddOnSettings.K2Server);
- 
+  console.log('K2 Server:' + AddOnCache.K2Server);
+  console.log('File Id:' + AddOnCache.SelectedItemId)
+
   // Create the Card Section with our dropdown and button
   var section = CardService.newCardSection();
   var fixedFooter = CardService.newFixedFooter();
   var header = CardService.newCardHeader()
   .setImageStyle(CardService.ImageStyle.SQUARE)
-  .setImageUrl(urlworkflowAssignment);  
+  .setImageUrl(urlWorkflowAssignment);  
 
   if (addViewFlow)
   {
@@ -57,7 +63,7 @@ function createCardWorkflow(addViewFlow, procInstId) {
 function populateDropdownWorkflows() {
   
   var url = buildK2WorkflowsURL();
-  var response = accessProtectedResource(url, httpMethods.GET);
+  var response = accessProtectedResource(url, "GET");
 
   var json = JSON.parse(response.getContentText());
   var itemCount = json.itemCount;
@@ -95,17 +101,17 @@ function onClickStartWorkflow(e) {
   console.log('onClickStartWorkflow');
   var id = parseInt(e.formInput.dropdownWorkflow);
   console.log("Selected Workflow Id: " + id);
+  console.log('Selected Item Id: ' + AddOnCache.SelectedItemId)
   
-  console.log("K2 Server: " + AddOnSettings.K2Server);
+  var fileId = AddOnCache.SelectedItemId;
 
-  console.log('Access Token: ' + AddOnSettings.oAuthService.getAccessToken());
   var request = {
     "xmlFields": [],
     "itemReferences": {},
-    "dataFields": {}
+    "dataFields": {"File Id":fileId}
   };
   var url = buildK2StartWorkflowURL(id);
-  var response = accessProtectedResource(url,httpMethods.POST,request);
+  var response = accessProtectedResource(url, "POST",request);
   
   var procInstId = parseInt(JSON.parse(response.getContentText()));
   console.log(procInstId);
@@ -115,9 +121,10 @@ function onClickStartWorkflow(e) {
 
   return CardService.newActionResponseBuilder()
   .setNavigation(nav)
-  .setNotification(CardService.newNotification()
-      .setText("Workflow Started: " + procInstId)
-      .setType(CardService.NotificationType.INFO))
+  // An example of using a Toast for notificaiton. This isn't needed in current implementation.
+  //.setNotification(CardService.newNotification()
+  //    .setText("Workflow Started: " + procInstId)
+  //    .setType(CardService.NotificationType.INFO))
   .build(); 
 }
 

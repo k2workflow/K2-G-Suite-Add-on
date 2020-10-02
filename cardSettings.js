@@ -1,29 +1,34 @@
 // TODO #6 (Google): enhance text boxes with suggestions cache, need to first get examples from Google for wiring up more than one text box
 
+// Card Literals
+var cardSettingsTitle = 'Settings';
+var cardSettingsSubTitle = 'Configure Add-On for K2';
+var urlK2LogoSidebar = 'http://contentus.blob.core.windows.net/images/k2_logo_sidebar.png';
+
 // Create Settings Card
 function createCardSettings() {
 
   var textK2Server = CardService.newTextInput()
     .setFieldName('textK2Server')
     .setTitle('Tenant')
-    .setValue(AddOnSettings.K2Server);
+    .setValue(AddOnCache.K2Server);
       
   // Create an input to capture AAD Tenant (required for External Users)
   var textAADTenant = CardService.newTextInput()
     .setFieldName('textAADTenant')
     .setTitle('AAD Domain (External Users)')
-    .setValue(AddOnSettings.AADTenant);
+    .setValue(AddOnCache.AADTenant);
   
   var textRefreshInterval = CardService.newTextInput()
     .setFieldName('textRefreshInterval')
     .setTitle('Refresh Interval')
-    .setValue(AddOnSettings.RefreshInterval)
+    .setValue(AddOnCache.RefreshInterval)
   
 
   var authButton = CardService.newTextButton();
   var authSection = CardService.newCardSection().setHeader("Authorization");    
 
-  if (AddOnSettings.oAuthService.hasAccess())
+  if (AddOnCache.oAuthService.hasAccess())
   {
     authButton.setText("<font color=\"#1FA9F2\">SIGN OUT</font>")
       .setTextButtonStyle(CardService.TextButtonStyle.TEXT)
@@ -31,7 +36,7 @@ function createCardSettings() {
   }
   else
   {
-    var authorizationUrl = AddOnSettings.oAuthService.getAuthorizationUrl(); 
+    var authorizationUrl = AddOnCache.oAuthService.getAuthorizationUrl(); 
     
     authButton.setText("<font color=\"#1FA9F2\">SIGN IN</font>")
       .setTextButtonStyle(CardService.TextButtonStyle.TEXT)
@@ -60,12 +65,12 @@ function createCardSettings() {
   .setText("save")
   .setOnClickAction(
       CardService.newAction()
-          .setFunctionName("saveSettings"))
+          .setFunctionName("saveSettingsToCache"))
       )
   .setSecondaryButton(CardService.newTextButton()
   .setText("help")
   .setOpenLink(CardService.newOpenLink()
-      .setUrl("https://help.k2.com/")));
+      .setUrl("https://github.com/k2workflow/K2-G-Suite-Add-on")));
 
 
   // Create the Card with our Sections
@@ -81,67 +86,4 @@ function createCardSettings() {
     .build();
 
   return card;
-}
-
-function getSettings()
-{
-  var settings = {};
-  
-  //Setup K2 Server Setting Value
-  if (PropertiesService.getUserProperties().getProperty(propertyK2Server) == null)
-  {
-    PropertiesService.getUserProperties().setProperty(propertyK2Server,'');
-  }
-  else
-  {
-    settings.K2Server = PropertiesService.getUserProperties().getProperty(propertyK2Server);
-  }
-
-  //Setup AAD Tenant Value
-  if (PropertiesService.getUserProperties().getProperty(propertyAADTenant) == null)
-  {
-    PropertiesService.getUserProperties().setProperty(propertyAADTenant,'');
-  }
-  else
-  {
-    settings.AADTenant = PropertiesService.getUserProperties().getProperty(propertyAADTenant);
-  }
-
-  //Setup Refresh Interval
-  if (PropertiesService.getUserProperties().getProperty(propertyRefreshInterval) == null)
-  {
-    PropertiesService.getUserProperties().setProperty(propertyRefreshInterval, 30);
-  }
-  else
-  {
-    settings.RefreshInterval = PropertiesService.getUserProperties().getProperty(propertyRefreshInterval);
-  }
-
-  return settings;
-
-}
-
-function saveSettings(e)
-{
-  console.log("AddOnSettings Before:" + AddOnSettings);
-  AddOnSettings.K2Server = e.formInputs.textK2Server[0];
-  AddOnSettings.AADTenant = e.formInputs.textAADTenant[0];
-  AddOnSettings.RefreshInterval = e.formInputs.textRefreshInterval[0];
-  console.log("AddOnSettings After:" + AddOnSettings);
-
-  var userProperties = PropertiesService.getUserProperties();
-
-  userProperties.setProperty(propertyK2Server, AddOnSettings.K2Server);
-  userProperties.setProperty(propertyAADTenant, AddOnSettings.AADTenant);
-  userProperties.setProperty(propertyRefreshInterval, AddOnSettings.RefreshInterval);
-  
-  console.log(e.formInputs);
-
-  AddOnSettings.oAuthService = getOAuthService();
-
-  return CardService.newActionResponseBuilder()
-      .setNotification(CardService.newNotification()
-          .setText("Settings Updated")
-          .setType(CardService.NotificationType.INFO))
-      .build();     
 }

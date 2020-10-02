@@ -1,3 +1,6 @@
+// Card Literals
+var urlHeaderTask = 'http://contentus.blob.core.windows.net/images/header_task.png';
+
 // Create Task Card
 function createCardTask(serialNumber) {
   console.log("Create Task Card");
@@ -34,7 +37,7 @@ function populateButtonTasks(serialNumber) {
   console.log ("Actions URL: " + url);
   try
   {
-    var response = accessProtectedResource(url,httpMethods.GET);
+    var response = accessProtectedResource(url,"GET");
     var json = JSON.parse(response.getContentText());
     var actionCount = json.batchableActions.length;
     console.log ("JSON Response Actions: " + json);
@@ -82,7 +85,7 @@ function actionK2Task(customAction, serialNumber) {
     };
   
   var url = buildK2TaskActionURL(serialNumber, customAction);
-  var response = accessProtectedResource(url,httpMethods.POST, request);
+  var response = accessProtectedResource(url,"POST", request);
 
   return createCardTask(serialNumber);
 }

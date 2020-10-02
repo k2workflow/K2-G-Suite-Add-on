@@ -1,3 +1,10 @@
+// Card Literals
+var actionTextGmail = 'Select or Open a K2 task notification email to begin.';
+var actionTextDrive = 'Open a file to perform K2 actions or start a workflow for the selected item.';
+var actionTextDefault = 'Open an email or file to perform K2 actions or start a workflow for the selected item.';
+var textHomeWelcome = 'Welcome to the K2 G Suite Add-on';
+var urlK2LogoSettings = 'http://contentus.blob.core.windows.net/images/k2_logo_settings.png';
+
 // Create Homepage card
 function createCardHomepage(service) {  
     console.log("createCardHomepage");

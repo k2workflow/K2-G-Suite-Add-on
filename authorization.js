@@ -1,5 +1,9 @@
 // Authorization functions were based on the guidance from the Google documentation https://developers.google.com/gsuite/add-ons/how-tos/non-google-services
 
+// TAGGED: Authentication Literal Values
+var oAuthClientID = 'cb563263-ca5c-4a1c-96ea-8650ea7939a4';
+var oAuthClientSecret = '72o.kX_5Q13so3M4N~TitlmwWiZ8w-WC3d';
+
 function getOAuthService() {
     // Create a new service with the given name. The name will be used when persisting the authorized token, 
     // so ensure it is unique within the scope of the property store.
@@ -9,9 +13,9 @@ function getOAuthService() {
     console.log("Active User Email: " + loginHint);
   
     // Azure B2C requires us to pass the AAD Tenant Domain in in the URLs. Otherwise we can just use common.
-    console.log('AAD Tenant: ' + AddOnSettings.AADTenant);
-    var authorizationUrl = 'https://login.microsoftonline.com/' + AddOnSettings.AADTenant + '/oauth2/authorize?resource=https://api.k2.com/';
-    var tokenUrl = 'https://login.microsoftonline.com/' + AddOnSettings.AADTenant + '/oauth2/token';
+    console.log('AAD Tenant: ' + AddOnCache.AADTenant);
+    var authorizationUrl = 'https://login.microsoftonline.com/' + AddOnCache.AADTenant + '/oauth2/authorize?resource=https://api.k2.com/';
+    var tokenUrl = 'https://login.microsoftonline.com/' + AddOnCache.AADTenant + '/oauth2/token';
    
     console.log("Authorization URL: " + authorizationUrl);
     console.log("Token URL: " + tokenUrl);
@@ -50,7 +54,7 @@ function getOAuthService() {
 // Google OAuth flow will invoke this function which is used to store the Authorization in the current user session 
 function authCallback(callbackRequest) {
     console.info('authCallback');
-    var isAuthorized = AddOnSettings.oAuthService.handleCallback(callbackRequest);
+    var isAuthorized = AddOnCache.oAuthService.handleCallback(callbackRequest);
     console.log('isAuthorized: ' + isAuthorized);
     if (isAuthorized) {
       return HtmlService.createHtmlOutput('Success! You can close this tab. <script>setTimeout(function() { top.window.close() }, 1);</script>');
@@ -61,7 +65,7 @@ function authCallback(callbackRequest) {
 
 // Clear the current user's OAuth token
 function onClickSignOut(e) {
-  AddOnSettings.oAuthService.reset();
+  AddOnCache.oAuthService.reset();
 
   var nav = CardService.newNavigation().popToRoot();
   return CardService.newActionResponseBuilder()
@@ -71,13 +75,13 @@ function onClickSignOut(e) {
 
 // Helper function to that will invoke Google's OAuth flow if we don't have a valid user token
 function accessProtectedResource(url, method, request) {
-  var maybeAuthorized = AddOnSettings.oAuthService.hasAccess();
+  var maybeAuthorized = AddOnCache.oAuthService.hasAccess();
   if (maybeAuthorized) {
     switch(method) {
-      case httpMethods.GET:
+      case "GET":
         var resp = HttpClientGet(url, true);
         break;
-      case httpMethods.POST:
+      case "POST":
         var resp = HttpClientPost(url, request, true)
         break;
       default:
@@ -101,7 +105,7 @@ function accessProtectedResource(url, method, request) {
 
   if (!maybeAuthorized) {
     CardService.newAuthorizationException()
-    .setAuthorizationUrl(AddOnSettings.oAuthService.getAuthorizationUrl())
+    .setAuthorizationUrl(AddOnCache.oAuthService.getAuthorizationUrl())
     .setResourceDisplayName("Display name to show to the user")
     .setCustomUiCallback('createCardSettings')
     .throwException();
