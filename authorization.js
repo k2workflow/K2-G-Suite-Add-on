@@ -1,8 +1,8 @@
 // Authorization functions were based on the guidance from the Google documentation https://developers.google.com/gsuite/add-ons/how-tos/non-google-services
 
 // TAGGED: Authentication Literal Values
-var oAuthClientID = 'cb563263-ca5c-4a1c-96ea-8650ea7939a4';
-var oAuthClientSecret = '72o.kX_5Q13so3M4N~TitlmwWiZ8w-WC3d';
+var oAuthClientID = '';
+var oAuthClientSecret = '';
 
 function getOAuthService() {
     // Create a new service with the given name. The name will be used when persisting the authorized token, 
