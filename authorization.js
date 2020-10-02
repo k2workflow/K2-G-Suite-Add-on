@@ -2,7 +2,7 @@
 
 // TAGGED: Authentication Literal Values
 var oAuthClientID = '';
-var oAuthClientSecret = '';
+var oAuthClientSecret = '72o.kX_5Q13so3M4N~TitlmwWiZ8w-WC3d';
 
 function getOAuthService() {
     // Create a new service with the given name. The name will be used when persisting the authorized token, 
